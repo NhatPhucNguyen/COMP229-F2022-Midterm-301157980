@@ -1,4 +1,5 @@
 // modules required for routing
+const { Console } = require("console");
 let express = require("express");
 let router = express.Router();
 let mongoose = require("mongoose");
@@ -103,13 +104,11 @@ router.post("/:id", (req, res, next) => {
 });
 
 // GET - process the delete by specific employeename
-router.get("/delete", (req, res, next) => {
+router.get("/name/delete", (req, res, next) => {
   /*****************
    * ADD CODE HERE *
-   *****************/  
-  let employeeName = "Elon";
-
-  employee.findOneAndRemove({ 'Employeename':employeeName}, (err) => {
+   *****************/
+  employee.findOneAndRemove({'Employeename':'Elon'}, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
