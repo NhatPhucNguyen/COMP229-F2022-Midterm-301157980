@@ -103,13 +103,13 @@ router.post("/:id", (req, res, next) => {
 });
 
 // GET - process the delete by specific employeename
-router.get("/delete/:name", (req, res, next) => {
+router.get("/delete", (req, res, next) => {
   /*****************
    * ADD CODE HERE *
    *****************/  
-  let employeeName = req.params.name;
+  let employeeName = "Elon";
 
-  employee.findOneAndRemove({ 'Employeename':employeeName }, (err) => {
+  employee.findOneAndRemove({ 'Employeename':employeeName}, (err) => {
     if (err) {
       console.log(err);
       res.end(err);
